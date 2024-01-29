@@ -20,6 +20,7 @@ const aNumber := 100
 @export var somethingToBeExported : int
 
 var debugValue := PI * 2
+var gun : Node : set = updateGun
 
 
 func _ready():
@@ -27,7 +28,11 @@ func _ready():
 
 # Detail what the function does unless it's blatently obvious in the name
 func calculateDebugValue(value : int):
-	return debugValue * 2 + 1
+	return value * 2 + 1
+
+func updateGun(node : Node):
+	gun = node
+	debugValue += 1
 
 # Signal function
 func onSomeBodyThatWeUsedToKnow(number : int, image : Image):
